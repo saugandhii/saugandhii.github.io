@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saugandhii's Profile Studio</title>
+
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e1e2e, #2a2a40);
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      cursor: default;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #b4befe;
+      margin-bottom: 30px;
+    }
+
+    .fun-button {
+      padding: 15px 32px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(45deg, #ff7675, #6c5ce7);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .fun-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .fun-button:active {
+      transform: scale(0.95);
+    }
+
+    #sparkle {
+      position: fixed;
+      pointer-events: none;
+      font-size: 24px;
+      transition: transform 0.05s linear;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="sparkle">✨</div>
+
+  <h1>Welcome to Profile Studio</h1>
+  <p>A little bit of magic on the web!</p>
+
+  <button class="fun-button" onclick="popConfetti()">
+    🎉 Press Me For Joy!
+  </button>
+
+  <script>
+    function popConfetti() {
+      confetti({
+        particleCount: 120,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+    }
+
+    window.addEventListener('mousemove', (e) => {
+      const sparkle = document.getElementById('sparkle');
+      sparkle.style.left = (e.clientX - 12) + 'px';
+      sparkle.style.top = (e.clientY - 12) + 'px';
+    });
+  </script>
+
+</body>
+</html>
